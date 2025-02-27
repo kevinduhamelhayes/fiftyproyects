@@ -36,6 +36,18 @@ form {
   padding: 1rem 2rem;
   display: block;
   width: 100%;
+  transition: outline-color 0.3s ease;
+}
+
+.input.error {
+  outline: 2px solid #ff6b6b;
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  75% { transform: translateX(10px); }
 }
 
 .input::placeholder {
@@ -58,11 +70,60 @@ form {
   cursor: pointer;
   font-size: 1.5rem;
   padding: 1rem 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.todos li:hover {
+  background-color: #f0f0f0;
 }
 
 .todos li.completed {
   color: #b6b6b6;
   text-decoration: line-through;
+}
+
+.filter-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 400px;
+  max-width: 100%;
+}
+
+.filter-btn, .clear-completed {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #666;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .clear-completed:hover {
+  background: rgb(179, 131, 226);
+  color: #fff;
+  border-color: rgb(179, 131, 226);
+}
+
+.filter-btn.active {
+  background: rgb(179, 131, 226);
+  color: #fff;
+  border-color: rgb(179, 131, 226);
+}
+
+.clear-completed {
+  background: #ff6b6b;
+  color: #fff;
+  border-color: #ff6b6b;
+}
+
+.clear-completed:hover {
+  background: #ff5252;
+  border-color: #ff5252;
 }
 
 small {
